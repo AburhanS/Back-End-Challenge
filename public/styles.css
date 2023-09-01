@@ -1,0 +1,200 @@
+nav{
+    display: flex;
+    justify-content: right;
+    text-transform: uppercase;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 15px;
+}
+nav h1{
+    font-size: 2em;
+}
+
+.content{
+    margin-left: 20px;
+}
+.create-feed form{
+    max-width: 400px;
+}
+.create-feed input, .create-feed textarea{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    height: 120px;
+}
+.create-feed button{
+    margin-top: 20px;
+    background: turquoise;
+    color: black;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-bottom: 70px;
+}
+.details{
+    width: 800px;
+}
+#name{
+    width: auto;
+    height: auto;
+}
+#name, #message{
+    border: 3px #352b2b solid;
+    border-radius: 5px;
+}
+
+body{
+    margin: 20px auto;
+    padding: 0 20px;
+    font-family: 'Noto Serif', serif;
+    }
+    p, h1, h2, h3, a, ul{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #222;
+}
+.create-feed h1{
+    margin-bottom: 40px;
+}
+
+.d-buttons{
+    margin: 10px;
+}
+#detail-buttons{
+    display: flex;
+    text-align: center;
+}
+#delete{
+    background-color: red;
+    padding: 0;
+    border: 0; 
+}
+#delete a, #edit a{
+    color: #fff;
+    font-weight: bold;
+}
+#edit{
+    background-color: blue;
+}
+#delete, #edit{
+    width: 80px;
+    height: 30px;
+    border: 1px #000 solid;
+}
+#delete, #edit:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+
+h3{
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+#feeds-list {
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 6px solid rgb(30, 240, 25);
+}
+.feeds a:hover h3{
+    color: blue;
+}
+
+.details{
+    position: relative;
+}
+
+
+textarea{
+    height: 120px;
+}
+
+#feeds-list{
+    display: flex;
+}
+
+#feeds-text{
+    width: 300px;;
+}
+
+#see-more-button {
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 80px;
+    height: 40px;
+    padding-top: 20px;
+}
+
+#see-more-button:hover {
+    background-color: #0056b3;
+}
+
+.details {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#feed-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#feed-text .content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#detail-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#delete a, #edit a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#delete, #edit {
+    width: 100px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+}
+
+#delete {
+    background-color: red;
+}
+
+#delete:hover {
+    background-color: #b30000;
+}
+
+#edit {
+    background-color: blue;
+}
+
+#edit:hover {
+    background-color: #0056b3;
+}

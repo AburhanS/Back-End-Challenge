@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs") %>
+
+<body>
+    
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="create-feed content">
+        <h1>Edit a Post</h1>
+        <form action="/feed/edit/<%= feed._id %>" method="POST">
+            <input type="text" id="name" name="name" value="<%= feed.name %>" maxlength="15" required>
+            <textarea id="message" name="message" maxlength="40" required><%= feed.message %></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

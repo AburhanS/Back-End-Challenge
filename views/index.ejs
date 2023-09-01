@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head.ejs") %>
+
+<body>
+
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="create-feed content">
+        <h1>Add a Post</h1>
+        <form action="/feed" method="POST">
+            <input type="text" id="name" name="name" placeholder="name" maxlength="15" required>
+            <textarea id="message" name="message" placeholder="Message" maxlength="40" required></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+
+    <div class="feeds content">
+        
+        <% if (feeds.length > 0){ %>
+            <% feeds.forEach(feed => { %>
+            
+                <div id="feeds-list">
+                    <div id="feeds-text">
+                        <h3 class="name"><%= feed.name %></h3>
+                        <p class="message"><%= feed.message %></p>
+                        <p class="date">
+                            <% if (feed.createdAt == feed.updatedAt) { %>
+                                Created: <%= feed.createdAt.toLocaleDateString() %>
+                            <% } else {%>
+                                Created: <%= feed.createdAt.toLocaleDateString() %> Updated: <%= feed.updatedAt.toLocaleDateString() %>
+                            <% } %>
+                        </p>
+                    </div>
+                    <a href="/feed/<%= feed.id %>" id="see-more-button">See More</a>
+                </div>
+                
+
+            <% }); %> 
+        <% } else { %>
+            <p>No feed found D:</p>
+        <% } %>
+
+    </div>
+</body>
+</html>

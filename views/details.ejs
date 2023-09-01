@@ -1,0 +1,42 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="details content">
+        <div id="feed-text">
+            <h2><%= feed.name %></h2>
+            <div class="content">
+                <p><%= feed.message %></p>
+            </div>
+        </div>
+        <div id="detail-buttons">
+            <button id="delete" class="d-buttons"><a  data-doc="<%= feed._id %>">Delete</a></button>
+            <button id="edit" class="d-buttons"><a href="/feed/edit/<%= feed._id %>" class="edit-button">Edit Post</a></button>
+            <p class="date">
+                <% if (feed.createdAt == feed.updatedAt) { %>
+                    Created: <%= feed.createdAt.toLocaleDateString() %>
+                <% } else {%>
+                    Created: <%= feed.createdAt.toLocaleDateString() %> Updated: <%= feed.updatedAt.toLocaleDateString() %>
+                <% } %>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const trashcan = document.querySelector("#delete a")
+
+        trashcan.addEventListener("click", (e) =>{
+            const endpoint = `/feed/${trashcan.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: "DELETE"
+            })
+            .then(response => response.json())
+            .then(data => window.location.href = data.redirect)
+            .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>
